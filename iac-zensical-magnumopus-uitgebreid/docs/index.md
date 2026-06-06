@@ -47,6 +47,14 @@ hide:
 
     [:octicons-arrow-right-24: Checklist openen](exam/magnum-opus-checklist.md)
 
+-   :material-shield-key:{ .lg .middle } __Mijn Magnum Opus__
+
+    ---
+
+    Leer je eigen Vaultwarden-project verdedigen met architectuur, commands, bewijs en mondelinge antwoorden.
+
+    [:octicons-arrow-right-24: Magnum Opus openen](magnum-opus/index.md)
+
 </div>
 
 ## Hoe gebruik je deze site?

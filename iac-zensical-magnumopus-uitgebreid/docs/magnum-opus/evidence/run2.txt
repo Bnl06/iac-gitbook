@@ -1,0 +1,102 @@
+
+PLAY [Deploy Vaultwarden with Podman, Nginx and TLS] ***************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [rocky1]
+
+TASK [common : Assert supported target distribution] ***************************
+ok: [rocky1] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [common : Enable EPEL repository] *****************************************
+ok: [rocky1]
+
+TASK [common : Install required packages] **************************************
+ok: [rocky1]
+
+TASK [common : Enable and start base services] *********************************
+ok: [rocky1] => (item=crond)
+ok: [rocky1] => (item=firewalld)
+
+TASK [security_baseline : Configure firewalld denied logging] ******************
+ok: [rocky1]
+
+TASK [security_baseline : Open only required public services] ******************
+ok: [rocky1] => (item=ssh)
+ok: [rocky1] => (item=http)
+ok: [rocky1] => (item=https)
+
+TASK [security_baseline : Allow Nginx to proxy to local Vaultwarden under SELinux] ***
+ok: [rocky1]
+
+TASK [vaultwarden : Assert required public settings are configured] ************
+ok: [rocky1] => {
+    "changed": false,
+    "msg": "All assertions passed"
+}
+
+TASK [vaultwarden : Create Vaultwarden and ACME directories] *******************
+ok: [rocky1] => (item={'path': '/opt/vaultwarden/data', 'mode': '0750'})
+ok: [rocky1] => (item={'path': '/etc/vaultwarden', 'mode': '0750'})
+ok: [rocky1] => (item={'path': '/etc/containers/systemd', 'mode': '0755'})
+ok: [rocky1] => (item={'path': '/etc/letsencrypt', 'mode': '0755'})
+ok: [rocky1] => (item={'path': '/etc/letsencrypt/credentials', 'mode': '0700'})
+ok: [rocky1] => (item={'path': '/var/log/letsencrypt', 'mode': '0755'})
+
+TASK [vaultwarden : Update DuckDNS record to the lab VM IP] ********************
+ok: [rocky1]
+
+TASK [vaultwarden : Render DuckDNS credentials for Certbot DNS challenge] ******
+ok: [rocky1]
+
+TASK [vaultwarden : Render Vaultwarden environment file] ***********************
+ok: [rocky1]
+
+TASK [vaultwarden : Render Vaultwarden Quadlet unit] ***************************
+ok: [rocky1]
+
+TASK [vaultwarden : Pull Vaultwarden image] ************************************
+ok: [rocky1]
+
+TASK [vaultwarden : Pull Certbot DuckDNS image] ********************************
+ok: [rocky1]
+
+TASK [vaultwarden : Flush handlers before starting Vaultwarden] ****************
+
+TASK [vaultwarden : Enable and start Vaultwarden service] **********************
+ok: [rocky1]
+
+TASK [vaultwarden : Wait until Vaultwarden answers locally] ********************
+ok: [rocky1]
+
+TASK [vaultwarden : Remove default Nginx site if present] **********************
+ok: [rocky1]
+
+TASK [vaultwarden : Request Let's Encrypt certificate with DuckDNS DNS-01] *****
+ok: [rocky1]
+
+TASK [vaultwarden : Restore SELinux context for Let's Encrypt files] ***********
+ok: [rocky1]
+
+TASK [vaultwarden : Re-check Let's Encrypt certificate] ************************
+ok: [rocky1]
+
+TASK [vaultwarden : Render final HTTPS reverse proxy config] *******************
+ok: [rocky1]
+
+TASK [vaultwarden : Validate Nginx configuration] ******************************
+ok: [rocky1]
+
+TASK [vaultwarden : Enable and start Nginx] ************************************
+ok: [rocky1]
+
+TASK [vaultwarden : Configure automated certificate renewal] *******************
+ok: [rocky1]
+
+TASK [vaultwarden : Flush final Nginx config] **********************************
+
+PLAY RECAP *********************************************************************
+rocky1                     : ok=26   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

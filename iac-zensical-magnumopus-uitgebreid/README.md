@@ -24,3 +24,8 @@ zensical serve # start de lokale preview op http://localhost:8000
 2. Ga naar **Settings → Pages**.
 3. Zet **Source** op **GitHub Actions**.
 4. Push naar `main` of start de workflow manueel via **Actions**.
+
+
+## Magnum Opus uitbreiding
+
+Deze versie bevat extra Zensical-tabbladen voor het Vaultwarden Magnum Opus-project: architectuur, roles, templates, secrets/TLS/DNS-01, commands, bewijs, idempotentie, troubleshooting en mondelinge verdediging.

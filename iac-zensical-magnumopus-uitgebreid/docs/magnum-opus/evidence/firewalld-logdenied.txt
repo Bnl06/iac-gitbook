@@ -1,0 +1,2 @@
+rocky1 | CHANGED | rc=0 >>
+LogDenied=all

@@ -123,6 +123,19 @@ nav:
       - Studiepad: exam/studiepad.md
       - Mondelinge voorbeeldvragen: exam/mondelinge-vragen.md
       - Magnum Opus checklist: exam/magnum-opus-checklist.md
+  - Magnum Opus:
+      - Overzicht: magnum-opus/index.md
+      - Architectuur en datastroom: magnum-opus/architectuur.md
+      - Projectstructuur: magnum-opus/projectstructuur.md
+      - Roles common en security: magnum-opus/roles-common-security.md
+      - Role vaultwarden: magnum-opus/role-vaultwarden.md
+      - Templates en configuratie: magnum-opus/templates-config.md
+      - Secrets, TLS en DNS-01: magnum-opus/secrets-tls-dns.md
+      - Commands en bewijs: magnum-opus/commands-evidence.md
+      - Idempotentie verdedigen: magnum-opus/idempotentie-verdediging.md
+      - Troubleshooting: magnum-opus/troubleshooting.md
+      - Mondelinge verdediging: magnum-opus/mondelinge-verdediging.md
+      - Projectchecklist: magnum-opus/checklist-project.md
   - Theorie:
       - 01 - IaC basisbegrippen: chapters/01-iac-basis.md
       - 02 - Ansible projectstructuur: chapters/02-projectstructuur.md
