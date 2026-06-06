@@ -1,0 +1,144 @@
+# ============================================================================
+# Zensical configuratie voor Infrastructure as Code StudyBook
+# ============================================================================
+
+site_name: Infrastructure as Code StudyBook
+site_description: >-
+  Zensical studiegids voor het mondeling examen Infrastructure as Code.
+site_author: Bnl06
+site_url: https://bnl06.github.io/iac-gitbook/
+
+copyright: >-
+  Copyright &copy; 2026 — Infrastructure as Code StudyBook
+
+theme:
+  name: material
+  language: nl
+  features:
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - content.footnote.tooltips
+    - content.tabs.link
+    - content.tooltips
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.path
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+    - search.share
+    - announce.dismiss
+    - toc.follow
+
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Schakel naar dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Schakel naar light mode
+
+  font:
+    text: Inter
+    code: JetBrains Mono
+
+  logo: assets/images/logo.svg
+  favicon: assets/images/favicon.svg
+
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Bnl06/iac-gitbook
+      name: Project repository
+  generator: false
+  status:
+    new: Nieuw toegevoegd
+    deprecated: Verouderd
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      permalink_title: Anker
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:zensical.extensions.emoji.to_svg
+      emoji_index: !!python/name:zensical.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+nav:
+  - Home: index.md
+  - Examen:
+      - Studiepad: exam/studiepad.md
+      - Mondelinge voorbeeldvragen: exam/mondelinge-vragen.md
+      - Magnum Opus checklist: exam/magnum-opus-checklist.md
+  - Theorie:
+      - 01 - IaC basisbegrippen: chapters/01-iac-basis.md
+      - 02 - Ansible projectstructuur: chapters/02-projectstructuur.md
+      - 03 - Variables, facts en register: chapters/03-variables-facts-register.md
+      - 04 - Task control, loops, when en blocks: chapters/04-task-control.md
+      - 05 - Templates en handlers: chapters/05-templates-handlers.md
+      - 06 - Roles: chapters/06-roles.md
+      - 07 - Secrets en Vault: chapters/07-secrets-vault.md
+      - 08 - Windows, WinRM en Chocolatey: chapters/08-windows-winrm-chocolatey.md
+      - 09 - Ansible en API's: chapters/09-ansible-api.md
+      - 10 - Cloud en dynamic inventory: chapters/10-cloud.md
+      - 11 - Network automation en self-healing: chapters/11-network-automation.md
+      - 12 - AWX / Automation Controller: chapters/12-awx-controller.md
+      - 13 - PXE, bare metal en examen: chapters/13-pxe-examen.md
+  - Voorbeelden:
+      - Ansible code met uitleg: examples/ansible-code-met-uitleg.md
+  - Bijlagen:
+      - Cheatsheet: appendix/cheatsheet.md
+      - Bronnenindex: appendix/bronnenindex.md

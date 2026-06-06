@@ -1,0 +1,192 @@
+/* ================================================================== */
+/* Infrastructure as Code StudyBook — custom styling                              */
+/* ================================================================== */
+
+:root {
+  --md-primary-fg-color:        #3949ab;
+  --md-primary-fg-color--light: #6f74dd;
+  --md-primary-fg-color--dark:  #00227b;
+  --md-accent-fg-color:         #ef6c00;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        #5c6bc0;
+  --md-primary-fg-color--light: #8e99f3;
+  --md-primary-fg-color--dark:  #26418f;
+  --md-accent-fg-color:         #ffa726;
+}
+
+/* ----- Hero / landing page polish ----- */
+
+.md-typeset h1 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.md-typeset h2 {
+  font-weight: 600;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  padding-bottom: 0.25em;
+  margin-top: 2em;
+}
+
+/* ----- Grid cards op de home ----- */
+
+.md-typeset .grid.cards > :is(ul, ol) > li,
+.md-typeset .grid > .card {
+  border-radius: 10px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.md-typeset .grid.cards > :is(ul, ol) > li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  border-color: var(--md-primary-fg-color--light);
+}
+
+/* ----- Admonitions: subtieler ----- */
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 8px;
+  border-left-width: 4px;
+}
+
+.md-typeset .admonition.abstract,
+.md-typeset details.abstract {
+  border-left-color: var(--md-primary-fg-color);
+}
+
+/* ----- Tabellen: zebra-strepen en hover ----- */
+
+.md-typeset table:not([class]) {
+  border-radius: 6px;
+  overflow: hidden;
+  font-size: 0.86em;
+}
+
+.md-typeset table:not([class]) tbody tr:nth-child(even) {
+  background-color: var(--md-default-fg-color--lightest);
+}
+
+.md-typeset table:not([class]) tbody tr:hover {
+  background-color: var(--md-primary-fg-color--light);
+  color: var(--md-primary-bg-color);
+}
+
+/* ----- Codeblokken iets ronder ----- */
+
+.md-typeset pre > code,
+.md-typeset .highlight pre {
+  border-radius: 8px;
+}
+
+/* ----- Mermaid diagrammen krijgen wat ademruimte ----- */
+
+.md-typeset .mermaid {
+  text-align: center;
+  margin: 2em 0;
+}
+
+/* Edge- en cluster-labels volgen het thema (geen fill achter ze) */
+.md-typeset .mermaid .edgeLabel,
+.md-typeset .mermaid .cluster-label {
+  color: var(--md-default-fg-color) !important;
+  fill: var(--md-default-fg-color) !important;
+}
+
+.md-typeset .mermaid .edgeLabel,
+.md-typeset .mermaid .edgeLabel rect {
+  background-color: var(--md-default-bg-color) !important;
+  fill: var(--md-default-bg-color) !important;
+}
+
+.md-typeset .mermaid .cluster rect {
+  fill: var(--md-default-fg-color--lightest) !important;
+  stroke: var(--md-default-fg-color--lighter) !important;
+}
+
+/* ----- Test-id badges ----- */
+
+.test-id {
+  display: inline-block;
+  padding: 0.1em 0.5em;
+  border-radius: 4px;
+  font-family: var(--md-code-font);
+  font-size: 0.85em;
+  background-color: var(--md-primary-fg-color--light);
+  color: white;
+}
+
+/* ----- Rubric-niveau badges ----- */
+
+.rubric-onvoldoende { color: #c62828; font-weight: 600; }
+.rubric-voldoende   { color: #ef6c00; font-weight: 600; }
+.rubric-goed        { color: #2e7d32; font-weight: 600; }
+.rubric-uitstekend  { color: #1565c0; font-weight: 700; }
+
+/* ----- Status icons ----- */
+
+.md-typeset .twemoji svg {
+  height: 1.1em;
+  width: 1.1em;
+  vertical-align: -0.15em;
+}
+
+/* ----- Header announce-bar ----- */
+
+.md-banner {
+  background: linear-gradient(90deg,
+              var(--md-primary-fg-color),
+              var(--md-primary-fg-color--dark));
+}
+
+/* ============================================================ */
+/* Header layout fix (desktop fullscreen)                       */
+/* ============================================================ */
+
+.md-header__inner.md-grid {
+  max-width: none !important;
+  padding-left: 1rem;
+  padding-right: 0.4rem;
+}
+
+.md-header__title {
+  flex-grow: 0;
+}
+
+.md-header__option[data-md-component="palette"] {
+  margin-left: auto;
+}
+
+/* De zoekbalk-knop heeft een vaste breedte van 8.9rem; verbreed 'm zodat
+   hij prominenter is op grote schermen, en plak hem tegen de rechterrand */
+@media screen and (min-width: 60em) {
+  .md-search__button {
+    width: 12rem;
+  }
+  .md-search {
+    margin-right: -11rem;
+  }
+}
+
+/* ----- Logo: groter en zichtbaar in beide thema's ----- */
+
+.md-header__button.md-logo {
+  margin: 0.2rem 0.4rem 0.2rem 0.2rem;
+  padding: 0.3rem;
+}
+
+.md-header__button.md-logo svg,
+.md-header__button.md-logo img {
+  height: 1.8rem;
+  width: 1.8rem;
+}
+
+/* ----- Footer iets compacter ----- */
+
+.md-footer-meta {
+  font-size: 0.78em;
+}
