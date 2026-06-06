@@ -1,0 +1,24 @@
+# Python / Ansible
+__pycache__/
+*.pyc
+.retry/
+*.retry
+
+# Secrets: nooit committen
+.vault_pass
+vault-password.txt
+*.key
+*.pem
+*.p12
+*.pfx
+.env
+
+# Ansible generated output
+collections/
+roles_external/
+*.log
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/

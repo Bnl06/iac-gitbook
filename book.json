@@ -1,0 +1,6 @@
+{
+  "title": "Infrastructure as Code - Zensical Studiegids",
+  "description": "Een mooie GitBook-studiegids voor het mondeling examen IaC.",
+  "plugins": ["anchors", "expandable-chapters"],
+  "styles": { "website": "assets/zensical.css" }
+}

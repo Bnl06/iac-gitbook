@@ -1,0 +1,13 @@
+{
+  "name": "iac-zensical-gitbook",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GitBook-studiegids Infrastructure as Code voor mondeling examen",
+  "scripts": {
+    "serve": "npx gitbook-cli serve",
+    "build": "npx gitbook-cli build"
+  },
+  "devDependencies": {
+    "gitbook-cli": "^2.3.2"
+  }
+}

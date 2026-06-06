@@ -1,0 +1,5 @@
+/* Extra styling for GitBook/GitHub readers. Safe to ignore if unsupported. */
+:root { --zen-bg:#0f172a; --zen-card:#f8fafc; --zen-accent:#6366f1; }
+.markdown-section h1 { border-bottom: 3px solid #6366f1; padding-bottom: .35rem; }
+.markdown-section blockquote { border-left: 4px solid #6366f1; background:#f8fafc; padding: .75rem 1rem; }
+.markdown-section code { border-radius: 6px; }
