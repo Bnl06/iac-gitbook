@@ -1,22 +1,12 @@
 # Infrastructure as Code StudyBook
 
-Zensical studiegids voor het mondeling examen **Infrastructure as Code**.
-
-## Online publiceren
-
-Deze repo gebruikt dezelfde standaard Zensical-aanpak als de voorbeeldbijlage:
-
-- `mkdocs.yml` voor de volledige Zensical/Material-configuratie
-- `docs/` als documentatiemap
-- `.github/workflows/deploy-docs.yml` voor GitHub Pages
-- `zensical build --clean` als build command
-
 ## Lokaal bekijken
 
 ```bash
 pip install zensical # installeert Zensical
 zensical serve # start de lokale preview op http://localhost:8000
 ```
+<<<<<<< HEAD:iac-zensical-magnumopus-uitgebreid/README.md
 
 ## GitHub Pages
 
@@ -29,3 +19,5 @@ zensical serve # start de lokale preview op http://localhost:8000
 ## Magnum Opus uitbreiding
 
 Deze versie bevat extra Zensical-tabbladen voor het Vaultwarden Magnum Opus-project: architectuur, roles, templates, secrets/TLS/DNS-01, commands, bewijs, idempotentie, troubleshooting en mondelinge verdediging.
+=======
+>>>>>>> 717bd177424820aa4c86e7264385a64b1a6b43d6:README.md
