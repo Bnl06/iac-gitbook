@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🌿 Infrastructure as Code - Zensical Studiegids
 
 Welkom in je **niet-standaard GitBook** voor het mondeling examen Infrastructure as Code. Dit is gemaakt als een rustige, duidelijke studiegids: eerst begrijpen, dan kunnen uitleggen, daarna kunnen toepassen.
@@ -41,3 +42,6 @@ Wanneer er Ansible-code of CLI-code staat, staat er uitleg bij met `# uitleg`. B
 ansible-playbook -i inventories/lab/hosts.yml playbooks/site.yml # voert site.yml uit tegen de lab-inventory
 ```
 
+=======
+# iac-gitbook
+>>>>>>> b50cd88e700afb29b59a66213157b869df816aa9
